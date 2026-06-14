@@ -1,8 +1,14 @@
 import { nomeCategoria } from '../lib/estilos.js'
 import { produtos } from '../data/artesaos.js'
+import { linkWhatsApp, mensagemPeca } from '../lib/whatsapp.js'
 
-const MINI_BG = ['#4a3525', '#1e4a3e', '#2a2844', '#3d2f1a']
 const destaques = produtos.filter((p) => p.destaque).slice(0, 4)
+
+function hrefProduto(produto) {
+  return produto.whatsapp
+    ? linkWhatsApp(produto.whatsapp, mensagemPeca(produto.nome))
+    : produto.url
+}
 
 export default function Hero() {
   return (
@@ -42,27 +48,33 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Coluna visual — grade 2×2 */}
+        {/* Coluna visual — grade 2×2 com fotos reais */}
         <div className="grid grid-cols-2 gap-px bg-tinta/20">
-          {destaques.map((produto, i) => (
+          {destaques.map((produto) => (
             <a
               key={produto.id}
-              href="#catalogo"
-              className="group flex min-h-[220px] flex-col justify-end p-5 transition-opacity hover:opacity-90 sm:min-h-[260px]"
-              style={{ background: MINI_BG[i % MINI_BG.length] }}
+              href={hrefProduto(produto)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex min-h-[220px] flex-col justify-end overflow-hidden sm:min-h-[260px]"
             >
-              <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-white/50">
-                {nomeCategoria[produto.categoria]}
-              </p>
-              <h3 className="font-display text-base font-bold leading-snug text-white line-clamp-2">
-                {produto.nome}
-              </h3>
-              <span
-                className="mt-2 inline-block self-start rounded px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-terracota"
-                style={{ background: 'rgba(160,69,53,0.2)' }}
-              >
-                {produto.tecnica.split(' ')[0]}
-              </span>
+              <img
+                src={produto.imagem}
+                alt={produto.nome}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="eager"
+              />
+              <div className="relative bg-tinta/75 px-4 py-3.5">
+                <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-white/60">
+                  {nomeCategoria[produto.categoria]}
+                </p>
+                <h3 className="font-display text-sm font-bold leading-snug text-white line-clamp-2">
+                  {produto.nome}
+                </h3>
+                <span className="mt-2 inline-block text-[10px] font-extrabold uppercase tracking-wide text-ouro">
+                  {produto.whatsapp ? 'WhatsApp →' : 'Ver site →'}
+                </span>
+              </div>
             </a>
           ))}
         </div>
