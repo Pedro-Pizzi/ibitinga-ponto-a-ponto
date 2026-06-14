@@ -147,6 +147,23 @@ export const artesaos = [
     canalResumo: 'Instagram',
     destaque: false,
   },
+  {
+    id: 'betinha-bordados',
+    nome: 'Betinha Bordados',
+    tecnica: 'bordado',
+    descricao:
+      'Artesã de Ibitinga especializada em puxa-sacos bordados em juta. Peças com designs variados (borboleta, galinha, coruja, rosa, baleia) prontas para entrega.',
+    especialidades: ['Puxa-sacos', 'Bordado em juta', 'Decoração'],
+    bairro: 'Ibitinga',
+    whatsapp: '5516996168629',
+    catalogoUrl: 'https://lista.mercadolivre.com.br/bordados-ibitinga',
+    selo: 'MercadoLivre',
+    fonte: 'Busca pública e produto em MercadoLivre',
+    fonteUrl: 'https://lista.mercadolivre.com.br/bordados-ibitinga',
+    produtosResumo: 'Puxa-saco',
+    canalResumo: 'WhatsApp/ML',
+    destaque: true,
+  },
 ]
 
 export const categorias = [
