@@ -19,7 +19,7 @@ function mensagemLoja(nome) {
 
 function CartaoSemImagem({ loja }) {
   return (
-    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-marinho via-[#273244] to-terracota">
+    <div className="flex h-full w-full items-center justify-center bg-marinho borda-ponto">
       <div className="px-6 text-center">
         <p className="font-grotesk text-2xl font-black leading-tight text-white">{loja.nome}</p>
         <p className="mt-2 text-[10px] font-bold uppercase tracking-widest text-white/60">{loja.selo}</p>
@@ -48,7 +48,6 @@ function CardLoja({ loja, onAbrir }) {
         ) : (
           <CartaoSemImagem loja={loja} />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/70 via-marinho/10 to-transparent" />
         <span className={`absolute left-3 top-3 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${estilo.bg} ${estilo.texto}`}>
           {nomeTipo[loja.tipo]}
         </span>
@@ -65,16 +64,16 @@ function CardLoja({ loja, onAbrir }) {
           )}
           <div>
             <h3 className="font-bold leading-tight text-marinho">{loja.nome}</h3>
-            <p className="text-xs text-gray-500">{loja.bairro} · {loja.selo || 'Fonte pública'}</p>
+            <p className="text-xs text-tinta-suave">{loja.bairro} · {loja.selo || 'Fonte pública'}</p>
           </div>
         </div>
 
-        <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-3">{loja.descricao}</p>
+        <p className="mb-4 text-sm leading-relaxed text-tinta-suave line-clamp-3">{loja.descricao}</p>
 
         <div className="mb-4 flex flex-wrap gap-1.5">
-          <span className="rounded bg-ouro/10 px-2 py-0.5 text-[10px] font-bold text-[#b07d00]">{loja.selo}</span>
+          <span className="rounded bg-ouro-escuro/10 px-2 py-0.5 text-[10px] font-bold text-ouro-escuro">{loja.selo}</span>
           {loja.especialidades.slice(0, 2).map((e) => (
-            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-600">
+            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-tinta-suave">
               {e}
             </span>
           ))}
@@ -95,7 +94,7 @@ function CardLoja({ loja, onAbrir }) {
           <button
             type="button"
             onClick={() => onAbrir(loja)}
-            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#a44a33]"
+            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
           >
             Ver página
           </button>
@@ -178,18 +177,17 @@ function ModalLoja({ loja, onFechar }) {
           ) : (
             <CartaoSemImagem loja={loja} />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-marinho/20 to-transparent" />
-          <div className="absolute bottom-5 left-5 right-16 text-white">
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTipo[loja.tipo]}</p>
-            <h2 id="titulo-loja" className="font-grotesk text-3xl font-bold leading-tight sm:text-4xl">
-              {loja.nome}
-            </h2>
-          </div>
+        </div>
+        <div className="bg-marinho px-5 py-4">
+          <p className="mb-1 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTipo[loja.tipo]}</p>
+          <h2 id="titulo-loja" className="font-grotesk text-3xl font-bold leading-tight text-white sm:text-4xl">
+            {loja.nome}
+          </h2>
         </div>
 
         <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <p className="text-lg leading-relaxed text-gray-600">{loja.descricao}</p>
+            <p className="text-lg leading-relaxed text-tinta-suave">{loja.descricao}</p>
             <div className="mt-5 flex flex-wrap gap-2">
               {loja.especialidades.map((e) => (
                 <span key={e} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-marinho">
@@ -204,7 +202,7 @@ function ModalLoja({ loja, onFechar }) {
                   href={loja.catalogoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#a44a33]"
+                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#8a3a2d]"
                 >
                   Abrir catálogo
                 </a>
@@ -292,7 +290,7 @@ export default function Lojas() {
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
             <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Empresas de Ibitinga</h2>
-            <p className="mt-3 text-lg text-gray-500">
+            <p className="mt-3 text-lg text-tinta-suave">
               Lojas, fábricas, marcas infantis, crochê e perfis públicos com contato ou fonte verificável.
             </p>
           </header>
@@ -310,7 +308,7 @@ export default function Lojas() {
                 type="button"
                 onClick={() => setTipoAtivo(tipo.id)}
                 className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
-                  ativo ? 'bg-marinho text-white' : 'bg-white text-gray-500 hover:text-marinho'
+                  ativo ? 'bg-marinho text-white' : 'bg-white text-tinta-suave hover:text-marinho'
                 }`}
                 aria-pressed={ativo}
               >

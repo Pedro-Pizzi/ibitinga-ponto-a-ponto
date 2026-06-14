@@ -24,12 +24,12 @@ export default function Rodape() {
             </dl>
 
             <BotaoWhatsApp
-              numero="5516996168629"
+              numero="5516982220435"
               mensagem={mensagemGeral()}
-              rotulo="Falar com o Turismo de Ibitinga pelo WhatsApp"
+              rotulo="Falar a gente pelo WhatsApp"
               className="mt-6"
             >
-              Falar com Turismo
+              Falar com a Gente
             </BotaoWhatsApp>
           </div>
 

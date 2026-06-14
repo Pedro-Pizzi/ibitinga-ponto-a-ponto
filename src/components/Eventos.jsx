@@ -17,11 +17,10 @@ function ItemEvento({ evento }) {
             loading="lazy"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-marinho via-[#273244] to-terracota">
+          <div className="flex h-full w-full items-center justify-center bg-marinho borda-ponto">
             <p className="px-4 text-center font-grotesk text-2xl font-bold text-white">{evento.nome}</p>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/70 via-transparent to-transparent" />
         <span className="absolute right-2 top-2 rounded bg-ouro px-2 py-0.5 text-[10px] font-bold uppercase text-marinho">
           {evento.dia} {typeof evento.mes === 'string' ? evento.mes.slice(0, 3) : ''}
         </span>
@@ -34,10 +33,10 @@ function ItemEvento({ evento }) {
         <h3 className="mb-1 font-bold leading-snug text-marinho transition-colors line-clamp-1 group-hover:text-terracota">
           {evento.nome}
         </h3>
-        <p className="mb-3 text-xs text-gray-500 line-clamp-2">{evento.descricao}</p>
+        <p className="mb-3 text-xs text-tinta-suave line-clamp-2">{evento.descricao}</p>
 
         <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-3">
-          <span className="text-[10px] font-medium text-gray-400">{evento.local.split(',')[0]}</span>
+          <span className="text-[10px] font-medium text-tinta-suave">{evento.local.split(',')[0]}</span>
           <a
             href={href}
             target="_blank"
@@ -66,7 +65,7 @@ export default function Eventos() {
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
             <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Agenda de eventos</h2>
-            <p className="mt-3 text-lg text-gray-500">
+            <p className="mt-3 text-lg text-tinta-suave">
               Feirinha, Feira do Bordado, Corpus Christi e ações públicas ligadas ao bordado e ao artesanato.
             </p>
           </header>
@@ -84,7 +83,7 @@ export default function Eventos() {
                 type="button"
                 onClick={() => setTipoAtivo(tipo.id)}
                 className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
-                  ativo ? 'bg-marinho text-white' : 'bg-gray-50 text-gray-500 hover:text-marinho'
+                  ativo ? 'bg-marinho text-white' : 'bg-white text-tinta-suave hover:text-marinho'
                 }`}
                 aria-pressed={ativo}
               >

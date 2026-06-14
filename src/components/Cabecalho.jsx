@@ -53,7 +53,7 @@ export default function Cabecalho() {
         <strong className="font-bold text-ouro">fontes públicas verificadas</strong>
       </div>
 
-      <header className="border-b border-[#d8c8b6] bg-[#f4ecdf]/95 shadow-sm backdrop-blur">
+      <header className="border-b border-tinta/10 bg-linho shadow-sm">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6" aria-label="Navegação principal">
           <Marca />
 
@@ -79,7 +79,7 @@ export default function Cabecalho() {
             <li>
               <a
                 href="#contato"
-                className="ml-2 inline-flex h-10 items-center rounded-lg bg-terracota px-5 text-sm font-bold text-white transition-colors hover:bg-[#a44a33]"
+                className="ml-2 inline-flex h-10 items-center rounded-lg bg-terracota px-5 text-sm font-bold text-white transition-colors hover:bg-[#8a3a2d]"
               >
                 WhatsApp
               </a>
@@ -99,7 +99,7 @@ export default function Cabecalho() {
         </nav>
 
         {aberto && (
-          <ul id="menu-mobile" className="border-t border-[#d8c8b6] bg-[#f4ecdf] px-4 pb-4 md:hidden">
+          <ul id="menu-mobile" className="border-t border-tinta/10 bg-linho px-4 pb-4 md:hidden">
             {LINKS.map((l) => (
               <li key={l.href}>
                 <a

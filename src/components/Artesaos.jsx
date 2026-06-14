@@ -19,7 +19,7 @@ function mensagemArtesao(nome) {
 
 function CartaoSemImagem({ artesao }) {
   return (
-    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-marinho via-[#273244] to-terracota">
+    <div className="flex h-full w-full items-center justify-center bg-marinho borda-ponto">
       <div className="px-6 text-center">
         <p className="font-grotesk text-2xl font-black leading-tight text-white">{artesao.nome}</p>
         <p className="mt-2 text-[10px] font-bold uppercase tracking-widest text-white/60">{artesao.selo}</p>
@@ -34,9 +34,7 @@ function CardArtesao({ artesao, onAbrir }) {
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
-      {/* Header: gradiente igual aos outros cards */}
-      <div className="relative h-36 overflow-hidden bg-gradient-to-br from-marinho via-[#273244] to-terracota">
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/70 via-marinho/10 to-transparent" />
+      <div className="relative h-36 overflow-hidden bg-marinho">
         <span className={`absolute left-3 top-3 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${estilo.bg} ${estilo.texto}`}>
           {nomeTecnica[artesao.tecnica]}
         </span>
@@ -63,15 +61,15 @@ function CardArtesao({ artesao, onAbrir }) {
           )}
           <div>
             <h3 className="text-sm font-bold leading-tight text-marinho">{artesao.nome}</h3>
-            <p className="text-[11px] text-gray-400">{artesao.bairro} · {artesao.selo}</p>
+            <p className="text-[11px] text-tinta-suave">{artesao.bairro} · {artesao.selo}</p>
           </div>
         </div>
 
-        <p className="mb-3 text-xs leading-relaxed text-gray-500 line-clamp-2">{artesao.descricao}</p>
+        <p className="mb-3 text-xs leading-relaxed text-tinta-suave line-clamp-2">{artesao.descricao}</p>
 
         <div className="mb-3 flex flex-wrap gap-1">
           {artesao.especialidades.slice(0, 2).map((e) => (
-            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-500">
+            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-tinta-suave">
               {e}
             </span>
           ))}
@@ -81,7 +79,7 @@ function CardArtesao({ artesao, onAbrir }) {
           <button
             type="button"
             onClick={() => onAbrir(artesao)}
-            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#a44a33]"
+            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
           >
             Ver página
           </button>
@@ -154,9 +152,7 @@ function ModalArtesao({ artesao, onFechar }) {
           <IconeFechar />
         </button>
 
-        {/* Header do modal: gradiente igual ao card */}
-        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-marinho via-[#273244] to-terracota sm:h-64">
-          <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-marinho/20 to-transparent" />
+        <div className="relative h-56 bg-marinho sm:h-64">
           <div className="absolute bottom-5 left-5 right-16 text-white">
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTecnica[artesao.tecnica]}</p>
             <h2 id="titulo-artesao" className="font-grotesk text-3xl font-bold leading-tight sm:text-4xl">
@@ -168,7 +164,7 @@ function ModalArtesao({ artesao, onFechar }) {
         {/* Galeria de produtos — chamativa, com scroll horizontal em mobile */}
         {artesao.galeria && artesao.galeria.length > 0 && (
           <div className="border-b border-gray-100 px-6 py-5 sm:px-8">
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">Produtos</p>
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-widest text-tinta-suave">Produtos</p>
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
               {artesao.galeria.map((img, i) => (
                 <div key={i} className="group/img overflow-hidden rounded-xl border border-gray-100 bg-gray-50 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
@@ -186,7 +182,7 @@ function ModalArtesao({ artesao, onFechar }) {
 
         <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <p className="text-lg leading-relaxed text-gray-600">{artesao.descricao}</p>
+            <p className="text-lg leading-relaxed text-tinta-suave">{artesao.descricao}</p>
             <div className="mt-5 flex flex-wrap gap-2">
               {artesao.especialidades.map((e) => (
                 <span key={e} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-marinho">
@@ -201,7 +197,7 @@ function ModalArtesao({ artesao, onFechar }) {
                   href={linkWhatsApp(artesao.whatsapp, mensagemArtesao(artesao.nome))}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#a44a33]"
+                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#8a3a2d]"
                 >
                   Chamar no WhatsApp
                 </a>
@@ -210,7 +206,7 @@ function ModalArtesao({ artesao, onFechar }) {
                   href={hrefAlternativo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#a44a33]"
+                  className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-terracota px-4 py-3 text-sm font-bold text-white hover:bg-[#8a3a2d]"
                 >
                   Abrir perfil
                 </a>

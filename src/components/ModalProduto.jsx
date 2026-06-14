@@ -106,7 +106,7 @@ export default function ModalProduto({ produto, onFechar }) {
                 href={produto.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[52px] w-full items-center justify-center rounded-xl bg-terracota px-5 py-3 text-lg font-bold text-white shadow-carta transition-colors hover:bg-[#a44a33]"
+                className="inline-flex min-h-[52px] w-full items-center justify-center rounded-xl bg-terracota px-5 py-3 text-lg font-bold text-white shadow-carta transition-colors hover:bg-[#8a3a2d]"
               >
                 Abrir site oficial
               </a>

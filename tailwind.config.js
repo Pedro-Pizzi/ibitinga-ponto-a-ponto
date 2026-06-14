@@ -8,9 +8,10 @@ export default {
         papel: '#FFFDF9',
         tinta: '#2B2117',
         'tinta-suave': '#5C5142',
-        terracota: '#BD5D43',
-        musgo: '#2E7D6B',
-        ocre: '#B0832B',
+        terracota: '#A04535',
+        musgo: '#236156',
+        ocre: '#7C5A1B',
+        'ouro-escuro': '#7D5A1A',
         anil: '#3F6CA6',
         ameixa: '#9A4A6E',
         // Cores novas da direcao visual B

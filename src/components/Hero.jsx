@@ -40,9 +40,8 @@ export default function Hero() {
             alt="Feirinha da Matriz em Ibitinga com bancas de artesanato e bordado"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-marinho via-marinho/35 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-widest text-white/70">Destaques com fonte real</p>
+            <p className="mb-4 inline-block rounded bg-marinho/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">Destaques com fonte real</p>
             <div className="grid gap-3">
               {destaques.map((produto) => (
                 <a

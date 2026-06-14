@@ -44,7 +44,7 @@
 @layer components {
   /* Borda tracejada que evoca o ponto de costura do bordado */
   .borda-ponto {
-    border: 2px dashed rgba(189, 93, 67, 0.45);
+    border: 2px dashed rgba(160, 69, 53, 0.45);
   }
 
   /* Trama de ponto-cruz sutil para fundos */
