@@ -15,28 +15,19 @@ const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.jpg'
 
 function Marca() {
   return (
-    <a href="#topo" className="group flex min-w-0 items-center" aria-label="Ibitinga Ponto a Ponto - início">
+    <a href="#topo" className="group flex shrink-0 items-center gap-2.5" aria-label="Ibitinga Ponto a Ponto - início">
       <img
-        src={marcaBanner}
-        alt="Ibitinga Ponto a Ponto - Capital do Bordado"
-        className="hidden h-auto w-[300px] max-w-full object-contain mix-blend-multiply lg:block xl:w-[360px]"
+        src={marcaSimbolo}
+        alt=""
+        className="h-9 w-9 shrink-0 rounded-full object-cover object-center"
         decoding="async"
       />
-
-      <span className="flex min-w-0 items-center gap-3 lg:hidden">
-        <img
-          src={marcaSimbolo}
-          alt=""
-          className="h-14 w-14 shrink-0 rounded-full object-cover object-center"
-          decoding="async"
-        />
-        <span className="min-w-0 leading-none">
-          <span className="hidden text-[9px] font-bold uppercase tracking-[0.2em] text-terracota sm:block">
-            Capital do Bordado
-          </span>
-          <span className="block whitespace-nowrap font-display text-lg font-bold text-tinta sm:text-xl">
-            Ibitinga <span className="text-terracota">Ponto a Ponto</span>
-          </span>
+      <span className="leading-none">
+        <span className="hidden whitespace-nowrap text-[9px] font-bold uppercase tracking-[0.18em] text-terracota sm:block">
+          Capital do Bordado
+        </span>
+        <span className="block whitespace-nowrap font-display text-lg font-bold text-tinta sm:text-xl">
+          Ibitinga <span className="text-terracota">Ponto a Ponto</span>
         </span>
       </span>
     </a>
