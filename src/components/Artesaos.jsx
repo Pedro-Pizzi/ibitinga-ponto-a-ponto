@@ -35,8 +35,8 @@ function CardArtesao({ artesao, onAbrir }) {
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
-      {/* Capa — foto da artesã ou gradiente */}
-      <div className="relative h-36 overflow-hidden bg-gray-100">
+      {/* Foto grande em retrato */}
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
         {imagemCapa ? (
           <img
             src={imagemCapa}
@@ -47,43 +47,26 @@ function CardArtesao({ artesao, onAbrir }) {
         ) : (
           <CartaoSemImagem artesao={artesao} />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/70 via-marinho/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-marinho/10 to-transparent" />
         <span className={`absolute left-3 top-3 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${estilo.bg} ${estilo.texto}`}>
           {nomeTecnica[artesao.tecnica]}
         </span>
+        {/* Nome sobre a foto */}
+        <div className="absolute bottom-4 left-4 right-4 text-white">
+          <h3 className="font-grotesk text-lg font-bold leading-tight drop-shadow">{artesao.nome}</h3>
+          <p className="text-[11px] text-white/70">{artesao.bairro} · {artesao.especialidades[0]}</p>
+        </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <div className="mb-4 flex items-center gap-4">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-marinho text-sm font-black text-white">
-            {iniciais(artesao.nome)}
-          </div>
-          <div>
-            <h3 className="font-bold leading-tight text-marinho">{artesao.nome}</h3>
-            <p className="text-xs text-gray-500">{artesao.bairro} · {artesao.selo || 'Fonte pública'}</p>
-          </div>
-        </div>
-
-        <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-3">{artesao.descricao}</p>
+      <div className="flex flex-1 flex-col p-4">
+        <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-2">{artesao.descricao}</p>
 
         <div className="mb-4 flex flex-wrap gap-1.5">
-          <span className="rounded bg-ouro/10 px-2 py-0.5 text-[10px] font-bold text-[#b07d00]">{artesao.selo}</span>
-          {artesao.especialidades.slice(0, 2).map((e) => (
+          {artesao.especialidades.slice(0, 3).map((e) => (
             <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-600">
               {e}
             </span>
           ))}
-        </div>
-
-        <div className="mb-6 grid grid-cols-2 gap-2">
-          <div className="rounded-lg bg-gray-50 p-2 text-center">
-            <p className="text-sm font-bold text-marinho">{artesao.produtosResumo || 'Artesanato'}</p>
-            <p className="text-[10px] text-gray-400">técnica principal</p>
-          </div>
-          <div className="rounded-lg bg-gray-50 p-2 text-center">
-            <p className="text-sm font-bold text-marinho">{artesao.canalResumo || 'Instagram'}</p>
-            <p className="text-[10px] text-gray-400">canal</p>
-          </div>
         </div>
 
         <div className="mt-auto flex gap-2">
