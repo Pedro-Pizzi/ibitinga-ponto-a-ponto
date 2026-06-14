@@ -36,7 +36,7 @@ export default function App() {
       <Rodape />
 
       <a
-        href={linkWhatsApp('5516996168629', mensagemGeral())}
+        href={linkWhatsApp('55169822220435', mensagemGeral())}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar com o Turismo de Ibitinga no WhatsApp"
