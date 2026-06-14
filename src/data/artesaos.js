@@ -29,6 +29,23 @@ export const corTecnica = {
 
 export const artesaos = [
   {
+    id: 'detinha-bordados',
+    nome: 'Detinha Bordados',
+    tecnica: 'bordado',
+    descricao:
+      'Artesã de Ibitinga especializada em puxa-sacos bordados em juta. Peças com designs variados (borboleta, galinha, coruja, pimenta, galinha caipira) — 50 cm × 32 cm, pronta entrega.',
+    especialidades: ['Puxa-sacos', 'Bordado em juta', 'Decoração'],
+    bairro: 'Ibitinga',
+    whatsapp: '5516991646397',
+    imagem: './imagens/artesaos/detinha-puxa-saco.jpg',
+    selo: 'Artesã local',
+    fonte: 'Contato direto',
+    fonteUrl: null,
+    produtosResumo: 'Puxa-saco',
+    canalResumo: 'WhatsApp',
+    destaque: true,
+  },
+  {
     id: 'bordados-ibitinga',
     nome: 'Bordados de Ibitinga',
     tecnica: 'bordado',
@@ -146,23 +163,6 @@ export const artesaos = [
     produtosResumo: 'Madeira',
     canalResumo: 'Instagram',
     destaque: false,
-  },
-  {
-    id: 'betinha-bordados',
-    nome: 'Betinha Bordados',
-    tecnica: 'bordado',
-    descricao:
-      'Artesã de Ibitinga especializada em puxa-sacos bordados em juta. Peças com designs variados (borboleta, galinha, coruja, rosa, baleia) prontas para entrega.',
-    especialidades: ['Puxa-sacos', 'Bordado em juta', 'Decoração'],
-    bairro: 'Ibitinga',
-    whatsapp: '5516996168629',
-    catalogoUrl: 'https://lista.mercadolivre.com.br/bordados-ibitinga',
-    selo: 'MercadoLivre',
-    fonte: 'Busca pública e produto em MercadoLivre',
-    fonteUrl: 'https://lista.mercadolivre.com.br/bordados-ibitinga',
-    produtosResumo: 'Puxa-saco',
-    canalResumo: 'WhatsApp/ML',
-    destaque: true,
   },
 ]
 
