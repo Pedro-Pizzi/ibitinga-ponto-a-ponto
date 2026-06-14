@@ -31,14 +31,16 @@ function CartaoSemImagem({ artesao }) {
 function CardArtesao({ artesao, onAbrir }) {
   const estilo = corTecnica[artesao.tecnica] || corTecnica.bordado
   const hrefAlternativo = artesao.instagram || artesao.catalogoUrl || artesao.fonteUrl
+  const imagemCapa = artesao.foto || artesao.imagem
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
+      {/* Capa — foto da artesã ou gradiente */}
       <div className="relative h-36 overflow-hidden bg-gray-100">
-        {artesao.imagem ? (
+        {imagemCapa ? (
           <img
-            src={artesao.imagem}
-            alt={`Referência visual de ${artesao.nome}`}
+            src={imagemCapa}
+            alt={`Foto de ${artesao.nome}`}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
@@ -63,6 +65,21 @@ function CardArtesao({ artesao, onAbrir }) {
         </div>
 
         <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-3">{artesao.descricao}</p>
+
+        {/* Galeria de produtos dentro do card */}
+        {artesao.galeria && artesao.galeria.length > 0 && (
+          <div className="mb-4 flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+            {artesao.galeria.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={`Produto ${i + 1} de ${artesao.nome}`}
+                className="h-16 w-16 shrink-0 rounded-lg border border-gray-100 object-cover"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        )}
 
         <div className="mb-4 flex flex-wrap gap-1.5">
           <span className="rounded bg-ouro/10 px-2 py-0.5 text-[10px] font-bold text-[#b07d00]">{artesao.selo}</span>
@@ -136,6 +153,7 @@ function ModalArtesao({ artesao, onFechar }) {
 
   if (!artesao) return null
 
+  const imagemCapa = artesao.foto || artesao.imagem
   const hrefAlternativo = artesao.instagram || artesao.catalogoUrl || artesao.fonteUrl
 
   return (
@@ -162,8 +180,8 @@ function ModalArtesao({ artesao, onFechar }) {
         </button>
 
         <div className="relative h-56 overflow-hidden bg-gray-100 sm:h-72">
-          {artesao.imagem ? (
-            <img src={artesao.imagem} alt="" className="h-full w-full object-cover" />
+          {imagemCapa ? (
+            <img src={imagemCapa} alt="" className="h-full w-full object-cover" />
           ) : (
             <CartaoSemImagem artesao={artesao} />
           )}
@@ -175,6 +193,24 @@ function ModalArtesao({ artesao, onFechar }) {
             </h2>
           </div>
         </div>
+
+        {/* Galeria de produtos no modal */}
+        {artesao.galeria && artesao.galeria.length > 0 && (
+          <div className="border-b border-gray-100 px-6 py-4 sm:px-8">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">Produtos</p>
+            <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+              {artesao.galeria.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Produto ${i + 1}`}
+                  className="aspect-square w-full rounded-lg border border-gray-100 object-cover"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
           <div>
