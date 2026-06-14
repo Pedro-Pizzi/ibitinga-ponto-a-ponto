@@ -1,120 +1,153 @@
 // =============================================================================
-//  CATÁLOGO DE TÉCNICAS E ARTESÃOS - Ibitinga Ponto a Ponto
+//  DIRETÓRIO DE ARTESÃOS - Ibitinga Ponto a Ponto
 // -----------------------------------------------------------------------------
-//  Espaço dedicado aos mestres do artesanato local, organizados por técnica.
+//  Pequenos artesãos e ateliês reais de Ibitinga, referenciados por seus perfis
+//  públicos no Instagram. Estrutura espelha o diretório de empresas (lojas.js).
 // =============================================================================
 
-export const categoriasTecnicas = [
-  {
-    id: 'bordado-rechileu',
-    nome: 'Bordado Rechileu',
-    descricao: 'Técnica de bordado com recortes, criando vazados elegantes e tradicionais.',
-    cor: 'terracota'
-  },
-  {
-    id: 'croche',
-    nome: 'Crochê Artístico',
-    descricao: 'Peças feitas à mão com agulha de gancho, variando de toalhas a decorações.',
-    cor: 'ocre'
-  },
-  {
-    id: 'ponto-cruz',
-    nome: 'Ponto Cruz',
-    descricao: 'Bordado em tela com pontos em forma de X, ideal para personalizações.',
-    cor: 'anil'
-  },
-  {
-    id: 'patchwork',
-    nome: 'Patchwork e Quilt',
-    descricao: 'Trabalhos feitos com retalhos de tecidos costurados, formando desenhos geométricos.',
-    cor: 'ameixa'
-  },
-  {
-    id: 'pintura-tecido',
-    nome: 'Pintura em Tecido',
-    descricao: 'Arte aplicada diretamente no tecido com tintas especiais e pincéis.',
-    cor: 'musgo'
-  },
-  {
-    id: 'bordado-manual',
-    nome: 'Bordado Manual',
-    descricao: 'O autêntico bordado feito à mão, ponto a ponto, com carinho e tradição.',
-    cor: 'terracota'
-  }
-];
+export const tiposArtesao = [
+  { id: 'todos', nome: 'Todos' },
+  { id: 'bordado', nome: 'Bordado' },
+  { id: 'croche', nome: 'Crochê' },
+  { id: 'artesanato', nome: 'Feito à mão' },
+  { id: 'madeira', nome: 'Madeira' },
+]
+
+export const nomeTecnica = {
+  bordado: 'Bordado à mão',
+  croche: 'Crochê e tapeçaria',
+  artesanato: 'Artesanato feito à mão',
+  madeira: 'Artesanato em madeira',
+}
+
+export const corTecnica = {
+  bordado: { bg: 'bg-terracota/10', texto: 'text-terracota' },
+  croche: { bg: 'bg-ocre/10', texto: 'text-ocre' },
+  artesanato: { bg: 'bg-ameixa/10', texto: 'text-ameixa' },
+  madeira: { bg: 'bg-musgo/10', texto: 'text-musgo' },
+}
 
 export const artesaos = [
   {
-    id: 'dona-marilda-feirinha',
-    nome: 'Dona Marilda da Feirinha',
-    tecnica_id: 'bordado-manual',
-    bio: 'Presença garantida todos os sábados na Praça da Matriz, Dona Marilda é mestra nos panos de prato e almofadas que decoram as casas de Ibitinga há décadas.',
-    especialidades: ['Panos de Prato', 'Capas de Almofada'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-1.jpg',
-    bairro: 'Centro / Feirinha'
+    id: 'bordados-ibitinga',
+    nome: 'Bordados de Ibitinga',
+    tecnica: 'bordado',
+    descricao:
+      'Perfil que reúne e divulga bordados da capital nacional do bordado, com toalhas, enxoval e peças de cama, mesa e banho de artesãos locais.',
+    especialidades: ['Toalhas', 'Enxoval', 'Cama e banho'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/bordadosibitinga/',
+    catalogoUrl: 'https://www.instagram.com/bordadosibitinga/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/bordadosibitinga/',
+    produtosResumo: 'Bordado',
+    canalResumo: 'Instagram',
+    destaque: true,
   },
   {
-    id: 'nadia-tapetes',
-    nome: 'Nádia dos Tapetes',
-    tecnica_id: 'croche',
-    bio: 'Referência na Feirinha de Sábado por suas passadeiras e tapetes de algodão puro, unindo durabilidade e o design rústico típico do artesanato ibitinguense.',
-    especialidades: ['Tapetes', 'Passadeiras'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-2.jpg',
-    bairro: 'Vila Izabel'
+    id: 'bordados-irimar',
+    nome: 'Bordados Irimar',
+    tecnica: 'bordado',
+    descricao:
+      'Ateliê de bordados de Ibitinga divulgado em perfil público, com peças bordadas para cama, mesa e banho e atendimento direto.',
+    especialidades: ['Bordado', 'Cama', 'Mesa'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/bordadosirimar/',
+    catalogoUrl: 'https://www.instagram.com/bordadosirimar/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/bordadosirimar/',
+    produtosResumo: 'Bordado',
+    canalResumo: 'Instagram',
+    destaque: true,
   },
   {
-    id: 'dona-maria-rechileu',
-    nome: 'Dona Maria do Rechileu',
-    tecnica_id: 'bordado-rechileu',
-    bio: 'Mais de 40 anos dedicados ao bordado rechileu, mantendo viva a tradição da família.',
-    especialidades: ['Toalhas de Mesa', 'Caminhos de Mesa'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-1.jpg',
-    bairro: 'Centro'
+    id: 'ingrid-bordados',
+    nome: 'Ingrid Bordados Ibitinga',
+    tecnica: 'bordado',
+    descricao:
+      'Artesã de Ibitinga com perfil público de bordados, oferecendo enxoval e peças bordadas com acabamento manual.',
+    especialidades: ['Bordado', 'Enxoval', 'Personalizado'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/ingridbordadosibitinga/',
+    catalogoUrl: 'https://www.instagram.com/ingridbordadosibitinga/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/ingridbordadosibitinga/',
+    produtosResumo: 'Bordado',
+    canalResumo: 'Instagram',
+    destaque: false,
   },
   {
-    id: 'seu-jose-croche',
-    nome: 'Seu José do Crochê',
-    tecnica_id: 'croche',
-    bio: 'Especialista em tapetes e jogos de banheiro em crochê, conhecido pela rapidez e precisão.',
-    especialidades: ['Tapetes', 'Jogos de Banheiro'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-2.jpg',
-    bairro: 'Jardim Primavera'
+    id: 'feito-a-mao-ibitinga',
+    nome: 'Feito à Mão Artesanato',
+    tecnica: 'artesanato',
+    descricao:
+      'Perfil dedicado a peças de artesanato feitas à mão em Ibitinga, reunindo trabalhos manuais e produção artesanal local.',
+    especialidades: ['Feito à mão', 'Artesanato', 'Decoração'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/feito_a_mao_artesanto_ibitinga/',
+    catalogoUrl: 'https://www.instagram.com/feito_a_mao_artesanto_ibitinga/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/feito_a_mao_artesanto_ibitinga/',
+    produtosResumo: 'Artesanato',
+    canalResumo: 'Instagram',
+    destaque: false,
   },
   {
-    id: 'ana-ponto-cruz',
-    nome: 'Ana do Ponto Cruz',
-    tecnica_id: 'ponto-cruz',
-    bio: 'Transforma enxovais de bebê em peças únicas com bordados personalizados em ponto cruz.',
-    especialidades: ['Enxoval de Bebê', 'Toalhas de Rosto'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-3.jpg',
-    bairro: 'Vila Izabel'
+    id: 'mercadao-do-croche',
+    nome: 'Mercadão do Crochê',
+    tecnica: 'croche',
+    descricao:
+      'Ateliê de crochê de Ibitinga com tapetes, peças decorativas e itens feitos à mão em fio, divulgados em perfil público.',
+    especialidades: ['Crochê', 'Tapetes', 'Decoração'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/mercadaodocroche/',
+    catalogoUrl: 'https://www.instagram.com/mercadaodocroche/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/mercadaodocroche/',
+    produtosResumo: 'Crochê',
+    canalResumo: 'Instagram',
+    destaque: true,
   },
   {
-    id: 'teresa-patchwork',
-    nome: 'Dona Teresa do Patchwork',
-    tecnica_id: 'patchwork',
-    bio: 'Mestra na arte de unir retalhos, cria colchas que contam histórias através das cores.',
-    especialidades: ['Colchas', 'Almofadas'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-4.jpg',
-    bairro: 'Jardim São Jorge'
+    id: 'fio-e-arte',
+    nome: 'Fio & Arte',
+    tecnica: 'croche',
+    descricao:
+      'Perfil de tapeçaria de Ibitinga com tapetes, cortinas, persianas e peças em fio produzidas de forma artesanal.',
+    especialidades: ['Tapetes', 'Tapeçaria', 'Cortinas'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/fioearte/',
+    catalogoUrl: 'https://www.instagram.com/fioearte/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/fioearte/',
+    produtosResumo: 'Tapeçaria',
+    canalResumo: 'Instagram',
+    destaque: false,
   },
   {
-    id: 'lucia-pintura',
-    nome: 'Lúcia Pintura',
-    tecnica_id: 'pintura-tecido',
-    bio: 'Traz a natureza para o pano com suas pinturas florais detalhadas em panos de prato.',
-    especialidades: ['Panos de Prato', 'Caminhos de Mesa'],
-    whatsapp: '5516996168629',
-    foto: './imagens/artesaos/artesao-5.jpg',
-    bairro: 'Centro'
-  }
-];
+    id: 'madeirarte',
+    nome: 'Madeirarte Artesanato',
+    tecnica: 'madeira',
+    descricao:
+      'Artesanato em madeira de Ibitinga divulgado em perfil público, com peças trabalhadas à mão para casa e decoração.',
+    especialidades: ['Madeira', 'Decoração', 'Feito à mão'],
+    bairro: 'Ibitinga',
+    instagram: 'https://www.instagram.com/madeirarteibitinga/',
+    catalogoUrl: 'https://www.instagram.com/madeirarteibitinga/',
+    selo: 'Perfil público',
+    fonte: 'Perfil público no Instagram',
+    fonteUrl: 'https://www.instagram.com/madeirarteibitinga/',
+    produtosResumo: 'Madeira',
+    canalResumo: 'Instagram',
+    destaque: false,
+  },
+]
 
 export const categorias = [
   { id: 'todos', nome: 'Todas as peças', cor: 'terracota' },
@@ -242,7 +275,6 @@ export const produtos = [
     categoria: 'banho',
     tecnica: 'Bordado em toalhas e acabamento artesanal',
     artesa: 'Feirinha de Artesanato',
-    artesao_id: 'dona-maria-rechileu',
     bairro: 'Centro',
     preco: 'Negociação direta na banca',
     motivo: 'listras',
@@ -258,7 +290,6 @@ export const produtos = [
     categoria: 'mesa',
     tecnica: 'Aplicação, bordado e costura criativa',
     artesa: 'Feirinha de Artesanato',
-    artesao_id: 'lucia-pintura',
     bairro: 'Centro',
     preco: 'Negociação direta na banca',
     motivo: 'floral',

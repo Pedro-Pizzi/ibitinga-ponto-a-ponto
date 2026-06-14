@@ -9,15 +9,6 @@ export const estiloCategoria = {
   decoracao: { texto: 'text-ocre', bg: 'bg-ocre/10', ponto: 'bg-ocre', borda: 'border-ocre' },
 }
 
-export const estiloTecnica = {
-  'bordado-rechileu': { texto: 'text-terracota', bg: 'bg-terracota/10', borda: 'border-terracota' },
-  'croche': { texto: 'text-ocre', bg: 'bg-ocre/10', borda: 'border-ocre' },
-  'ponto-cruz': { texto: 'text-anil', bg: 'bg-anil/10', borda: 'border-anil' },
-  'patchwork': { texto: 'text-ameixa', bg: 'bg-ameixa/10', borda: 'border-ameixa' },
-  'pintura-tecido': { texto: 'text-musgo', bg: 'bg-musgo/10', borda: 'border-musgo' },
-  'bordado-manual': { texto: 'text-terracota', bg: 'bg-terracota/10', borda: 'border-terracota' },
-}
-
 export const nomeCategoria = {
   mesa: 'Mesa',
   cama: 'Cama',
