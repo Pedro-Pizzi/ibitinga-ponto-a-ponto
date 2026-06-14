@@ -37,7 +37,7 @@ export const artesaos = [
     especialidades: ['Puxa-sacos', 'Bordado em juta', 'Decoração'],
     bairro: 'Ibitinga',
     whatsapp: '5516991646397',
-    foto: './imagens/artesaos/detinha-bordados/D_NQ_NP_2X_639683-MLB44135495898_112020-F-puxa-saco-bordado-juta-promoco.webp',
+    foto: './imagens/artesaos/detinha-bordados/image.png',
     galeria: [
       './imagens/artesaos/detinha-bordados/D_NQ_NP_753685-MLB44135500913_112020-F.jpg',
       './imagens/artesaos/detinha-bordados/D_NQ_NP_801678-MLB44135511363_112020-F.jpg',

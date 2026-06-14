@@ -66,21 +66,6 @@ function CardArtesao({ artesao, onAbrir }) {
 
         <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-3">{artesao.descricao}</p>
 
-        {/* Galeria de produtos dentro do card */}
-        {artesao.galeria && artesao.galeria.length > 0 && (
-          <div className="mb-4 flex gap-2 overflow-x-auto pb-1 no-scrollbar">
-            {artesao.galeria.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`Produto ${i + 1} de ${artesao.nome}`}
-                className="h-16 w-16 shrink-0 rounded-lg border border-gray-100 object-cover"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        )}
-
         <div className="mb-4 flex flex-wrap gap-1.5">
           <span className="rounded bg-ouro/10 px-2 py-0.5 text-[10px] font-bold text-[#b07d00]">{artesao.selo}</span>
           {artesao.especialidades.slice(0, 2).map((e) => (
