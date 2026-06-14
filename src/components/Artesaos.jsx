@@ -31,33 +31,36 @@ function CartaoSemImagem({ artesao }) {
 function CardArtesao({ artesao, onAbrir }) {
   const estilo = corTecnica[artesao.tecnica] || corTecnica.bordado
   const hrefAlternativo = artesao.instagram || artesao.catalogoUrl || artesao.fonteUrl
-  const imagemHeader = artesao.galeria?.[0] || artesao.imagem
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
-      {/* Header compacto com foto do produto */}
-      <div className="relative h-40 overflow-hidden bg-gray-100">
-        {imagemHeader ? (
-          <img
-            src={imagemHeader}
-            alt={`Produto de ${artesao.nome}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        ) : (
-          <CartaoSemImagem artesao={artesao} />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/60 via-marinho/10 to-transparent" />
+      {/* Header: gradiente igual aos outros cards */}
+      <div className="relative h-36 overflow-hidden bg-gradient-to-br from-marinho via-[#273244] to-terracota">
+        <div className="absolute inset-0 bg-gradient-to-t from-marinho/70 via-marinho/10 to-transparent" />
         <span className={`absolute left-3 top-3 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${estilo.bg} ${estilo.texto}`}>
           {nomeTecnica[artesao.tecnica]}
         </span>
+        <div className="absolute bottom-4 left-4 right-4 text-white">
+          <p className="font-grotesk text-base font-black leading-tight">{artesao.nome}</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">{artesao.especialidades[0]}</p>
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-4">
+        {/* Avatar: foto pessoal da artesã fica aqui, do lado de fora do header */}
         <div className="mb-3 flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-marinho text-xs font-black text-white">
-            {iniciais(artesao.nome)}
-          </div>
+          {artesao.foto ? (
+            <img
+              src={artesao.foto}
+              alt={`Foto de ${artesao.nome}`}
+              className="h-12 w-12 shrink-0 rounded-full border-2 border-gray-200 object-cover object-top"
+              loading="lazy"
+            />
+          ) : (
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-marinho text-sm font-black text-white">
+              {iniciais(artesao.nome)}
+            </div>
+          )}
           <div>
             <h3 className="text-sm font-bold leading-tight text-marinho">{artesao.nome}</h3>
             <p className="text-[11px] text-gray-400">{artesao.bairro} · {artesao.selo}</p>
@@ -151,13 +154,8 @@ function ModalArtesao({ artesao, onFechar }) {
           <IconeFechar />
         </button>
 
-        {/* Header do modal: foto pessoal da artesã */}
-        <div className="relative h-56 overflow-hidden bg-gray-100 sm:h-72">
-          {artesao.foto ? (
-            <img src={artesao.foto} alt="" className="h-full w-full object-cover object-top" />
-          ) : (
-            <CartaoSemImagem artesao={artesao} />
-          )}
+        {/* Header do modal: gradiente igual ao card */}
+        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-marinho via-[#273244] to-terracota sm:h-64">
           <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-marinho/20 to-transparent" />
           <div className="absolute bottom-5 left-5 right-16 text-white">
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTecnica[artesao.tecnica]}</p>
