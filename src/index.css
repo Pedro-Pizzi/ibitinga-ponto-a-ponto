@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* compensa o cabeçalho fixo ao navegar por ancoras */
+  }
+
+  body {
+    @apply bg-linho text-tinta font-sans antialiased;
+    /* Corpo de texto generoso para leitura confortável (público sênior) */
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Foco visível e consistente em todo elemento interativo (acessibilidade) */
+  :focus-visible {
+    outline: 3px solid theme('colors.terracota');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Respeita quem prefere menos animação */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Borda tracejada que evoca o ponto de costura do bordado */
+  .borda-ponto {
+    border: 2px dashed rgba(189, 93, 67, 0.45);
+  }
+
+  /* Trama de ponto-cruz sutil para fundos */
+  .trama-bordado {
+    background-image:
+      linear-gradient(rgba(43, 33, 23, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 33, 23, 0.04) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+
+  /* Link de pular para o conteúdo, visível apenas ao focar via teclado */
+  .pular-conteudo {
+    @apply absolute left-4 -top-20 z-50 rounded-lg bg-tinta px-4 py-3 text-papel font-semibold transition-all;
+  }
+  .pular-conteudo:focus {
+    @apply top-4;
+  }
+}
