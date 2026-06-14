@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { produtos, categorias } from '../data/artesaos.js'
 import CardProduto from './CardProduto.jsx'
 import ModalProduto from './ModalProduto.jsx'
@@ -8,6 +8,15 @@ export default function Catalogo() {
   const [categoriaAtiva, setCategoriaAtiva] = useState('todos')
   const [busca, setBusca] = useState('')
   const [pecaAberta, setPecaAberta] = useState(null)
+
+  useEffect(() => {
+    function onAbrir(e) {
+      const p = produtos.find((prod) => prod.id === e.detail)
+      if (p) setPecaAberta(p)
+    }
+    window.addEventListener('ibitinga:abrirProduto', onAbrir)
+    return () => window.removeEventListener('ibitinga:abrirProduto', onAbrir)
+  }, [])
 
   const filtrados = useMemo(() => {
     const termo = busca.trim().toLowerCase()

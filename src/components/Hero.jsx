@@ -1,13 +1,11 @@
 import { nomeCategoria } from '../lib/estilos.js'
 import { produtos } from '../data/artesaos.js'
-import { linkWhatsApp, mensagemPeca } from '../lib/whatsapp.js'
 
 const destaques = produtos.filter((p) => p.destaque).slice(0, 4)
 
-function hrefProduto(produto) {
-  return produto.whatsapp
-    ? linkWhatsApp(produto.whatsapp, mensagemPeca(produto.nome))
-    : produto.url
+function abrirNoCatalogo(produto) {
+  document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' })
+  window.dispatchEvent(new CustomEvent('ibitinga:abrirProduto', { detail: produto.id }))
 }
 
 export default function Hero() {
@@ -51,12 +49,11 @@ export default function Hero() {
         {/* Coluna visual — grade 2×2 com fotos reais */}
         <div className="grid grid-cols-2 gap-px bg-tinta/20">
           {destaques.map((produto) => (
-            <a
+            <button
               key={produto.id}
-              href={hrefProduto(produto)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex min-h-[220px] flex-col justify-end overflow-hidden sm:min-h-[260px]"
+              type="button"
+              onClick={() => abrirNoCatalogo(produto)}
+              className="group relative flex min-h-[220px] w-full flex-col justify-end overflow-hidden text-left sm:min-h-[260px]"
             >
               <img
                 src={produto.imagem}
@@ -72,10 +69,10 @@ export default function Hero() {
                   {produto.nome}
                 </h3>
                 <span className="mt-2 inline-block text-[10px] font-extrabold uppercase tracking-wide text-ouro">
-                  {produto.whatsapp ? 'WhatsApp →' : 'Ver site →'}
+                  Ver produto →
                 </span>
               </div>
-            </a>
+            </button>
           ))}
         </div>
       </div>
