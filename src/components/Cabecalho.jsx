@@ -11,20 +11,45 @@ const LINKS = [
 
 function Marca() {
   return (
-    <a href="#topo" className="group flex items-center gap-2.5" aria-label="Ibitinga Ponto a Ponto - início">
-      <svg viewBox="0 0 32 32" className="h-9 w-9 shrink-0" aria-hidden="true">
-        <circle cx="16" cy="16" r="15" fill="#BD5D43" />
-        <g stroke="#FFFDF9" strokeWidth="2.2" strokeLinecap="round">
-          <line x1="9" y1="9" x2="15" y2="15" />
-          <line x1="15" y1="9" x2="9" y2="15" />
-          <line x1="20" y1="14" x2="24" y2="18" />
-          <line x1="24" y1="14" x2="20" y2="18" />
-          <line x1="12" y1="20" x2="16" y2="24" />
-          <line x1="16" y1="20" x2="12" y2="24" />
+    <a href="#topo" className="group flex min-w-0 items-center gap-3" aria-label="Ibitinga Ponto a Ponto - início">
+      <svg viewBox="0 0 64 64" className="h-12 w-12 shrink-0 drop-shadow-sm" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" fill="#FFFDF9" stroke="#BD5D43" strokeWidth="3" />
+        <path
+          d="M14 39c8-13 23-16 36-9"
+          fill="none"
+          stroke="#E6A300"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+        <path
+          d="M44 15 20 49"
+          fill="none"
+          stroke="#111827"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <path d="M45.5 13.5 50 18l-4.5 1.5-3-3z" fill="#111827" />
+        <g fill="#BD5D43" fontFamily="Georgia, serif" fontSize="16" fontWeight="700">
+          <text x="16" y="31">I</text>
+          <text x="27" y="31">B</text>
+          <text x="42" y="31">I</text>
+        </g>
+        <g stroke="#BD5D43" strokeLinecap="round" strokeWidth="2">
+          <path d="M19 45h2" />
+          <path d="M25 45h2" />
+          <path d="M31 45h2" />
+          <path d="M37 45h2" />
+          <path d="M43 45h2" />
         </g>
       </svg>
-      <span className="font-display text-lg font-bold leading-none text-tinta">
-        Ibitinga<span className="text-terracota"> Ponto a Ponto</span>
+
+      <span className="min-w-0 leading-none">
+        <span className="hidden font-grotesk text-[9px] font-bold uppercase tracking-[0.24em] text-terracota sm:block">
+          Capital do Bordado
+        </span>
+        <span className="block whitespace-nowrap font-display text-lg font-bold text-tinta sm:text-xl">
+          Ibitinga <span className="text-terracota">Ponto a Ponto</span>
+        </span>
       </span>
     </a>
   )
