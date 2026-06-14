@@ -31,39 +31,44 @@ function CartaoSemImagem({ artesao }) {
 function CardArtesao({ artesao, onAbrir }) {
   const estilo = corTecnica[artesao.tecnica] || corTecnica.bordado
   const hrefAlternativo = artesao.instagram || artesao.catalogoUrl || artesao.fonteUrl
-  const imagemCapa = artesao.foto || artesao.imagem
+  const imagemHeader = artesao.galeria?.[0] || artesao.imagem
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
-      {/* Foto grande em retrato */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
-        {imagemCapa ? (
+      {/* Header compacto com foto do produto */}
+      <div className="relative h-40 overflow-hidden bg-gray-100">
+        {imagemHeader ? (
           <img
-            src={imagemCapa}
-            alt={`Foto de ${artesao.nome}`}
-            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            src={imagemHeader}
+            alt={`Produto de ${artesao.nome}`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
         ) : (
           <CartaoSemImagem artesao={artesao} />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-marinho/80 via-marinho/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-marinho/60 via-marinho/10 to-transparent" />
         <span className={`absolute left-3 top-3 rounded px-2 py-0.5 text-[10px] font-bold uppercase ${estilo.bg} ${estilo.texto}`}>
           {nomeTecnica[artesao.tecnica]}
         </span>
-        {/* Nome sobre a foto */}
-        <div className="absolute bottom-4 left-4 right-4 text-white">
-          <h3 className="font-grotesk text-lg font-bold leading-tight drop-shadow">{artesao.nome}</h3>
-          <p className="text-[11px] text-white/70">{artesao.bairro} · {artesao.especialidades[0]}</p>
-        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-4">
-        <p className="mb-4 text-sm leading-relaxed text-gray-500 line-clamp-2">{artesao.descricao}</p>
+        <div className="mb-3 flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-marinho text-xs font-black text-white">
+            {iniciais(artesao.nome)}
+          </div>
+          <div>
+            <h3 className="text-sm font-bold leading-tight text-marinho">{artesao.nome}</h3>
+            <p className="text-[11px] text-gray-400">{artesao.bairro} · {artesao.selo}</p>
+          </div>
+        </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5">
-          {artesao.especialidades.slice(0, 3).map((e) => (
-            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-600">
+        <p className="mb-3 text-xs leading-relaxed text-gray-500 line-clamp-2">{artesao.descricao}</p>
+
+        <div className="mb-3 flex flex-wrap gap-1">
+          {artesao.especialidades.slice(0, 2).map((e) => (
+            <span key={e} className="rounded bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-500">
               {e}
             </span>
           ))}
@@ -121,7 +126,6 @@ function ModalArtesao({ artesao, onFechar }) {
 
   if (!artesao) return null
 
-  const imagemCapa = artesao.foto || artesao.imagem
   const hrefAlternativo = artesao.instagram || artesao.catalogoUrl || artesao.fonteUrl
 
   return (
@@ -147,9 +151,10 @@ function ModalArtesao({ artesao, onFechar }) {
           <IconeFechar />
         </button>
 
+        {/* Header do modal: foto pessoal da artesã */}
         <div className="relative h-56 overflow-hidden bg-gray-100 sm:h-72">
-          {imagemCapa ? (
-            <img src={imagemCapa} alt="" className="h-full w-full object-cover" />
+          {artesao.foto ? (
+            <img src={artesao.foto} alt="" className="h-full w-full object-cover object-top" />
           ) : (
             <CartaoSemImagem artesao={artesao} />
           )}
@@ -162,19 +167,20 @@ function ModalArtesao({ artesao, onFechar }) {
           </div>
         </div>
 
-        {/* Galeria de produtos no modal */}
+        {/* Galeria de produtos — chamativa, com scroll horizontal em mobile */}
         {artesao.galeria && artesao.galeria.length > 0 && (
-          <div className="border-b border-gray-100 px-6 py-4 sm:px-8">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">Produtos</p>
-            <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+          <div className="border-b border-gray-100 px-6 py-5 sm:px-8">
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">Produtos</p>
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
               {artesao.galeria.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`Produto ${i + 1}`}
-                  className="aspect-square w-full rounded-lg border border-gray-100 object-cover"
-                  loading="lazy"
-                />
+                <div key={i} className="group/img overflow-hidden rounded-xl border border-gray-100 bg-gray-50 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
+                  <img
+                    src={img}
+                    alt={`Produto ${i + 1}`}
+                    className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover/img:scale-105"
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           </div>
