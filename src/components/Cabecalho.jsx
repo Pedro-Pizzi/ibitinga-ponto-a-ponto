@@ -18,7 +18,7 @@ function Marca() {
       <img
         src={marcaBanner}
         alt="Ibitinga Ponto a Ponto - Capital do Bordado"
-        className="hidden h-auto w-[300px] max-w-[34vw] object-contain mix-blend-multiply lg:block xl:w-[360px]"
+        className="hidden h-auto w-[300px] max-w-full object-contain mix-blend-multiply lg:block xl:w-[360px]"
         decoding="async"
       />
 
