@@ -73,10 +73,11 @@ export const eventos = [
     dataTxt: '3 e 4 de junho de 2026',
     local: 'Igreja Matriz do Senhor Bom Jesus e Praça Cônego Eutímio Ticianelli',
     descricao:
-      'Tradição em que Ibitinga borda suas ruas para a celebração religiosa. A programação inclui missas, procissão, bênção, praça de alimentação, artesanato local e atrações culturais.',
+      'Edição de 2026 já realizada. Tradição em que Ibitinga borda suas ruas para a celebração religiosa, com missas, procissão, praça de alimentação, artesanato local e atrações culturais.',
     imagem: './imagens/feirinha-matriz-rua.jpeg',
     gratuito: true,
     recorrente: true,
+    realizado: true,
     destaque: true,
     fonte: 'Prefeitura de Ibitinga',
     fonteUrl: 'https://www.ibitinga.sp.gov.br/portal/noticias/0/3/3792/corpus-christi-ibitinga-borda-suas-ruas-para-a-passagem-do-senhor',

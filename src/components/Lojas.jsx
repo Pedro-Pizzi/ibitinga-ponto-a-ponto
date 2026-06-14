@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { corTipo, lojas, nomeTipo, tiposLoja } from '../data/lojas.js'
 import { linkWhatsApp } from '../lib/whatsapp.js'
+import { useModalA11y } from '../lib/useModalA11y.js'
 import { IconeFechar } from './Icones.jsx'
 
 function iniciais(nome) {
@@ -94,7 +95,7 @@ function CardLoja({ loja, onAbrir }) {
           <button
             type="button"
             onClick={() => onAbrir(loja)}
-            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
+            className="min-h-[44px] flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
           >
             Ver página
           </button>
@@ -103,7 +104,7 @@ function CardLoja({ loja, onAbrir }) {
               href={linkWhatsApp(loja.whatsapp, mensagemLoja(loja.nome))}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
+              className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
             >
               WhatsApp
             </a>
@@ -112,7 +113,7 @@ function CardLoja({ loja, onAbrir }) {
               href={hrefAlternativo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
+              className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
             >
               {loja.site ? 'Site oficial' : 'Perfil'}
             </a>
@@ -125,20 +126,7 @@ function CardLoja({ loja, onAbrir }) {
 
 function ModalLoja({ loja, onFechar }) {
   const fecharRef = useRef(null)
-
-  useEffect(() => {
-    if (!loja) return
-    fecharRef.current?.focus()
-    document.body.style.overflow = 'hidden'
-    const aoTeclar = (e) => {
-      if (e.key === 'Escape') onFechar()
-    }
-    document.addEventListener('keydown', aoTeclar)
-    return () => {
-      document.removeEventListener('keydown', aoTeclar)
-      document.body.style.overflow = ''
-    }
-  }, [loja, onFechar])
+  useModalA11y(Boolean(loja), onFechar, fecharRef)
 
   if (!loja) return null
 
@@ -307,7 +295,7 @@ export default function Lojas() {
                 key={tipo.id}
                 type="button"
                 onClick={() => setTipoAtivo(tipo.id)}
-                className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
+                className={`min-h-[44px] whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
                   ativo ? 'bg-marinho text-white' : 'bg-white text-tinta-suave hover:text-marinho'
                 }`}
                 aria-pressed={ativo}

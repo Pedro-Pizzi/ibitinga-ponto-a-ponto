@@ -15,7 +15,7 @@ const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.jpg'
 
 function Marca() {
   return (
-    <a href="#topo" className="group flex shrink-0 items-center gap-2.5" aria-label="Ibitinga Ponto a Ponto - início">
+    <a href="#topo" className="group flex min-h-[44px] shrink-0 items-center gap-2.5" aria-label="Ibitinga Ponto a Ponto - início">
       <img
         src={marcaSimbolo}
         alt=""
@@ -50,7 +50,7 @@ export default function Cabecalho() {
 
           <a
             href="#catalogo"
-            className="hidden max-w-[220px] flex-1 items-center gap-3 rounded-lg border border-[#d8c8b6] bg-white/70 px-4 py-2 text-sm font-semibold text-gray-600 transition-all hover:border-ouro/50 hover:text-marinho lg:flex"
+            className="hidden min-h-[44px] max-w-[220px] flex-1 items-center gap-3 rounded-lg border border-[#d8c8b6] bg-white/70 px-4 py-2 text-sm font-semibold text-gray-600 transition-all hover:border-ouro/50 hover:text-marinho lg:flex"
           >
             <IconeBusca className="h-5 w-5 text-gray-400" />
             <span className="whitespace-nowrap">Buscar no catálogo</span>
@@ -70,7 +70,7 @@ export default function Cabecalho() {
             <li>
               <a
                 href="#contato"
-                className="ml-2 inline-flex h-10 items-center rounded-lg bg-terracota px-5 text-sm font-bold text-white transition-colors hover:bg-[#8a3a2d]"
+                className="ml-2 inline-flex h-11 items-center rounded-lg bg-terracota px-5 text-sm font-bold text-white transition-colors hover:bg-[#8a3a2d]"
               >
                 WhatsApp
               </a>

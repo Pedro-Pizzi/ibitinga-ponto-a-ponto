@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { artesaos, corTecnica, nomeTecnica, tiposArtesao } from '../data/artesaos.js'
 import { linkWhatsApp } from '../lib/whatsapp.js'
+import { useModalA11y } from '../lib/useModalA11y.js'
 import { IconeFechar } from './Icones.jsx'
 
 function iniciais(nome) {
@@ -79,7 +80,7 @@ function CardArtesao({ artesao, onAbrir }) {
           <button
             type="button"
             onClick={() => onAbrir(artesao)}
-            className="flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
+            className="min-h-[44px] flex-1 rounded-lg bg-terracota py-2 text-xs font-bold text-white transition-colors hover:bg-[#8a3a2d]"
           >
             Ver página
           </button>
@@ -88,7 +89,7 @@ function CardArtesao({ artesao, onAbrir }) {
               href={linkWhatsApp(artesao.whatsapp, mensagemArtesao(artesao.nome))}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
+              className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
             >
               WhatsApp
             </a>
@@ -97,7 +98,7 @@ function CardArtesao({ artesao, onAbrir }) {
               href={hrefAlternativo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
+              className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-terracota py-2 text-xs font-bold text-terracota transition-colors hover:bg-terracota/5"
             >
               Perfil
             </a>
@@ -110,20 +111,7 @@ function CardArtesao({ artesao, onAbrir }) {
 
 function ModalArtesao({ artesao, onFechar }) {
   const fecharRef = useRef(null)
-
-  useEffect(() => {
-    if (!artesao) return
-    fecharRef.current?.focus()
-    document.body.style.overflow = 'hidden'
-    const aoTeclar = (e) => {
-      if (e.key === 'Escape') onFechar()
-    }
-    document.addEventListener('keydown', aoTeclar)
-    return () => {
-      document.removeEventListener('keydown', aoTeclar)
-      document.body.style.overflow = ''
-    }
-  }, [artesao, onFechar])
+  useModalA11y(Boolean(artesao), onFechar, fecharRef)
 
   if (!artesao) return null
 
@@ -276,7 +264,7 @@ export default function Artesaos() {
                 key={tipo.id}
                 type="button"
                 onClick={() => setTecnicaAtiva(tipo.id)}
-                className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
+                className={`min-h-[44px] whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
                   ativo ? 'bg-marinho text-white' : 'bg-white text-gray-500 hover:text-marinho'
                 }`}
                 aria-pressed={ativo}

@@ -45,14 +45,14 @@ export default function CardProduto({ produto, onAbrir }) {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg bg-[#25D366] py-2 text-xs font-bold text-white transition-colors hover:bg-[#1fb355]"
+              className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg bg-[#25D366] py-2 text-xs font-bold text-white transition-colors hover:bg-[#1fb355]"
             >
               {produto.whatsapp ? 'WhatsApp' : 'Site oficial'}
             </a>
             <button
               type="button"
               onClick={() => onAbrir(produto)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-base font-bold text-gray-500 transition-colors hover:bg-gray-50"
+              className="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 text-base font-bold text-gray-500 transition-colors hover:bg-gray-50"
               aria-label={`Ver detalhes de ${produto.nome}`}
               title="Ver detalhes"
             >

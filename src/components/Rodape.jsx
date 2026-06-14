@@ -26,7 +26,7 @@ export default function Rodape() {
             <BotaoWhatsApp
               numero="5516982220435"
               mensagem={mensagemGeral()}
-              rotulo="Falar a gente pelo WhatsApp"
+              rotulo="Falar com a gente pelo WhatsApp"
               className="mt-6"
             >
               Falar com a Gente

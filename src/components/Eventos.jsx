@@ -22,7 +22,7 @@ function ItemEvento({ evento }) {
           </div>
         )}
         <span className="absolute right-2 top-2 rounded bg-ouro px-2 py-0.5 text-[10px] font-bold uppercase text-marinho">
-          {evento.dia} {typeof evento.mes === 'string' ? evento.mes.slice(0, 3) : ''}
+          {evento.realizado ? 'Realizado' : `${evento.dia} ${typeof evento.mes === 'string' ? evento.mes.slice(0, 3) : ''}`}
         </span>
         <span className="absolute bottom-3 left-3 rounded bg-white/90 px-2 py-0.5 text-[10px] font-bold uppercase text-marinho">
           {nomeEvento[evento.tipo]}
@@ -41,7 +41,7 @@ function ItemEvento({ evento }) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] font-bold text-terracota hover:underline"
+            className="inline-flex min-h-[44px] items-center text-[11px] font-bold text-terracota hover:underline"
           >
             {evento.whatsapp ? 'Saber mais ->' : 'Fonte oficial ->'}
           </a>
@@ -82,7 +82,7 @@ export default function Eventos() {
                 key={tipo.id}
                 type="button"
                 onClick={() => setTipoAtivo(tipo.id)}
-                className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
+                className={`min-h-[44px] whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold transition-colors ${
                   ativo ? 'bg-marinho text-white' : 'bg-white text-tinta-suave hover:text-marinho'
                 }`}
                 aria-pressed={ativo}

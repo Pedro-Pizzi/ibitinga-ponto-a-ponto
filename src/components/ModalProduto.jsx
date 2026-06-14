@@ -1,26 +1,14 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import PadraoBordado from './PadraoBordado.jsx'
 import BotaoWhatsApp from './BotaoWhatsApp.jsx'
 import { IconeFechar } from './Icones.jsx'
 import { estiloCategoria, nomeCategoria } from '../lib/estilos.js'
 import { mensagemPeca } from '../lib/whatsapp.js'
+import { useModalA11y } from '../lib/useModalA11y.js'
 
 export default function ModalProduto({ produto, onFechar }) {
   const fecharRef = useRef(null)
-
-  useEffect(() => {
-    if (!produto) return
-    fecharRef.current?.focus()
-    document.body.style.overflow = 'hidden'
-    const aoTeclar = (e) => {
-      if (e.key === 'Escape') onFechar()
-    }
-    document.addEventListener('keydown', aoTeclar)
-    return () => {
-      document.removeEventListener('keydown', aoTeclar)
-      document.body.style.overflow = ''
-    }
-  }, [produto, onFechar])
+  useModalA11y(Boolean(produto), onFechar, fecharRef)
 
   if (!produto) return null
   const est = estiloCategoria[produto.categoria]
