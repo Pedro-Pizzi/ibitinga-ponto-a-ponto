@@ -30,7 +30,7 @@ export default function CardProduto({ produto, onAbrir }) {
         <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-tinta-suave">
           {produto.artesa}
         </p>
-        <h3 className="mb-2 font-bold leading-tight text-marinho transition-colors line-clamp-2 group-hover:text-terracota">
+        <h3 className="mb-2 font-display font-bold leading-tight text-marinho transition-colors line-clamp-2 group-hover:text-terracota">
           {produto.nome}
         </h3>
         <div className="mt-auto">

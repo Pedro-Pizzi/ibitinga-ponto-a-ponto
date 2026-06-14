@@ -155,7 +155,7 @@ function ModalArtesao({ artesao, onFechar }) {
         <div className="relative h-56 bg-marinho sm:h-64">
           <div className="absolute bottom-5 left-5 right-16 text-white">
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTecnica[artesao.tecnica]}</p>
-            <h2 id="titulo-artesao" className="font-grotesk text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 id="titulo-artesao" className="font-display text-3xl font-bold leading-tight sm:text-4xl">
               {artesao.nome}
             </h2>
           </div>
@@ -258,7 +258,7 @@ export default function Artesaos() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
-            <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Artesãos de Ibitinga</h2>
+            <h2 className="font-display text-3xl font-bold text-marinho sm:text-4xl">Artesãos de Ibitinga</h2>
             <p className="mt-3 text-lg text-gray-500">
               Pequenos artesãos e ateliês locais que mantêm vivas as técnicas manuais, com perfis públicos verificáveis.
             </p>

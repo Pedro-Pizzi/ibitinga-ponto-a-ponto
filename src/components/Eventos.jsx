@@ -64,7 +64,7 @@ export default function Eventos() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
-            <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Agenda de eventos</h2>
+            <h2 className="font-display text-3xl font-bold text-marinho sm:text-4xl">Agenda de eventos</h2>
             <p className="mt-3 text-lg text-tinta-suave">
               Feirinha, Feira do Bordado, Corpus Christi e ações públicas ligadas ao bordado e ao artesanato.
             </p>

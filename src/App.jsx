@@ -1,5 +1,6 @@
 import Cabecalho from './components/Cabecalho.jsx'
 import Hero from './components/Hero.jsx'
+import Stats from './components/Stats.jsx'
 import Catalogo from './components/Catalogo.jsx'
 import Lojas from './components/Lojas.jsx'
 import Artesaos from './components/Artesaos.jsx'
@@ -22,6 +23,7 @@ export default function App() {
 
       <main id="conteudo">
         <Hero />
+        <Stats />
         <Catalogo />
         <Lojas />
         <Artesaos />

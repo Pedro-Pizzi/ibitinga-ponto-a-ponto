@@ -180,7 +180,7 @@ function ModalLoja({ loja, onFechar }) {
         </div>
         <div className="bg-marinho px-5 py-4">
           <p className="mb-1 text-xs font-bold uppercase tracking-widest text-ouro">{nomeTipo[loja.tipo]}</p>
-          <h2 id="titulo-loja" className="font-grotesk text-3xl font-bold leading-tight text-white sm:text-4xl">
+          <h2 id="titulo-loja" className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
             {loja.nome}
           </h2>
         </div>
@@ -289,7 +289,7 @@ export default function Lojas() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
-            <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Empresas de Ibitinga</h2>
+            <h2 className="font-display text-3xl font-bold text-marinho sm:text-4xl">Empresas de Ibitinga</h2>
             <p className="mt-3 text-lg text-tinta-suave">
               Lojas, fábricas, marcas infantis, crochê e perfis públicos com contato ou fonte verificável.
             </p>

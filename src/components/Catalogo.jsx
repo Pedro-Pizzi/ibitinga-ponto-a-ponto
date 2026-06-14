@@ -53,7 +53,7 @@ export default function Catalogo() {
       <section id="catalogo" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">
-            <h2 className="font-grotesk text-3xl font-bold text-marinho sm:text-4xl">Vitrine de peças reais</h2>
+            <h2 className="font-display text-3xl font-bold text-marinho sm:text-4xl">Vitrine de peças reais</h2>
             <p className="mt-3 text-lg text-gray-500">
               Produtos, coleções e linhas divulgados por marcas, fábricas e bancas de Ibitinga.
             </p>
