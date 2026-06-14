@@ -9,8 +9,8 @@ const LINKS = [
   { href: '#projeto', texto: 'O projeto' },
 ]
 
-const marcaBanner = './imagens/marca/ibitinga-ponto-a-ponto-banner.jpg'
-const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.jpg'
+const marcaBanner = './imagens/marca/ibitinga-ponto-a-ponto-banner.png'
+const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.png'
 
 function Marca() {
   return (
@@ -18,7 +18,7 @@ function Marca() {
       <img
         src={marcaBanner}
         alt="Ibitinga Ponto a Ponto - Capital do Bordado"
-        className="hidden h-auto w-[300px] max-w-full object-contain mix-blend-multiply lg:block xl:w-[360px]"
+        className="hidden h-auto w-[300px] max-w-full object-contain lg:block xl:w-[360px]"
         decoding="async"
       />
 
