@@ -40,9 +40,9 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar com o Turismo de Ibitinga no WhatsApp"
-        className="fixed bottom-5 right-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-[#1FA855] text-white shadow-carta-hover transition-transform hover:scale-105 focus-visible:scale-105"
+        className="fixed bottom-4 right-4 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-[#1FA855] text-white shadow-carta-hover transition-transform hover:scale-105 focus-visible:scale-105 sm:bottom-5 sm:right-5 sm:h-14 sm:w-14"
       >
-        <IconeWhatsApp className="h-7 w-7" />
+        <IconeWhatsApp className="h-6 w-6 sm:h-7 sm:w-7" />
       </a>
     </>
   )

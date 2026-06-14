@@ -3,7 +3,7 @@ import { mensagemGeral } from '../lib/whatsapp.js'
 
 export default function Rodape() {
   return (
-    <footer id="contato" className="scroll-mt-20 border-t-4 border-terracota bg-linho">
+    <footer id="contato" className="border-t-4 border-terracota bg-linho">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2">
           <div>

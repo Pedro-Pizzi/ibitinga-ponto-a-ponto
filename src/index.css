@@ -9,7 +9,13 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; /* compensa o cabeçalho fixo ao navegar por ancoras */
+    scroll-padding-top: 6rem; /* compensa o cabeçalho fixo ao navegar por ancoras */
+  }
+
+  @media (max-width: 640px) {
+    html {
+      scroll-padding-top: 7rem;
+    }
   }
 
   body {
@@ -61,5 +67,14 @@
   }
   .pular-conteudo:focus {
     @apply top-4;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

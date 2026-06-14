@@ -18,7 +18,7 @@ const PASSOS = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="scroll-mt-20 bg-tinta text-linho">
+    <section id="como-funciona" className="bg-tinta text-linho">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="font-display text-3xl font-bold sm:text-4xl">
           Da pesquisa à compra, em 3 passos

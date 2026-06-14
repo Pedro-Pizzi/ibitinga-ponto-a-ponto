@@ -27,7 +27,7 @@ export default function Turismo() {
   ]
 
   return (
-    <section id="turismo" className="scroll-mt-20 border-t border-gray-100 bg-papel">
+    <section id="turismo" className="border-t border-gray-100 bg-papel">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <header className="mb-12 max-w-2xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-terracota">Conheça Ibitinga</p>

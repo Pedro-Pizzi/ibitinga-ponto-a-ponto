@@ -7,7 +7,7 @@ const ODS = [
 
 export default function SobreProjeto() {
   return (
-    <section id="projeto" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6">
+    <section id="projeto" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <div className="grid gap-12 md:grid-cols-2">
         <div>
           <p className="mb-3 text-sm font-bold uppercase tracking-wide text-terracota">

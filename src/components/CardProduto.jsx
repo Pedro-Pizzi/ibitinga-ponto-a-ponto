@@ -5,6 +5,7 @@ import { mensagemPeca, linkWhatsApp } from '../lib/whatsapp.js'
 export default function CardProduto({ produto, onAbrir }) {
   const mensagem = mensagemPeca(produto.nome)
   const href = produto.whatsapp ? linkWhatsApp(produto.whatsapp, mensagem) : produto.url
+  const imagemContain = produto.imagemModo === 'contain'
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
@@ -18,7 +19,9 @@ export default function CardProduto({ produto, onAbrir }) {
           <img
             src={produto.imagem}
             alt={produto.nome}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+              imagemContain ? 'bg-white object-contain p-8' : 'object-cover'
+            }`}
             loading="lazy"
           />
         ) : (

@@ -60,7 +60,7 @@ export default function Eventos() {
   }, [tipoAtivo])
 
   return (
-    <section id="eventos" className="scroll-mt-20 border-t border-gray-200 bg-white">
+    <section id="eventos" className="border-t border-gray-200 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <header className="max-w-xl">

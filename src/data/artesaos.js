@@ -223,8 +223,9 @@ export const produtos = [
     bairro: 'Ibitinga',
     preco: 'Consulte catálogo / lojista',
     motivo: 'floral',
-    imagem: './imagens/reais/paulinha-banner.jpg',
-    destaque: true,
+    imagem: './imagens/reais/paulinha-baby-logo.svg',
+    imagemModo: 'contain',
+    destaque: false,
     descricao:
       'Linha infantil divulgada pela Paulinha Baby, fabricante especializada em enxovais para bebês, quarto completo, bolsas, mosquiteiros e acessórios.',
     whatsapp: '5516981800072',
@@ -271,7 +272,7 @@ export const produtos = [
     preco: 'Consulte no site oficial',
     motivo: 'floral',
     imagem: './imagens/reais/sakura-banner.jpg',
-    destaque: false,
+    destaque: true,
     descricao:
       'A Sakura Enxovais divulga coleções estampadas para cozinha e mesa posta em seu site oficial e canais públicos.',
     whatsapp: '5516997251412',

@@ -12,6 +12,7 @@ export default function ModalProduto({ produto, onFechar }) {
 
   if (!produto) return null
   const est = estiloCategoria[produto.categoria]
+  const imagemContain = produto.imagemModo === 'contain'
 
   return (
     <div
@@ -40,7 +41,9 @@ export default function ModalProduto({ produto, onFechar }) {
           <img
             src={produto.imagem}
             alt={produto.nome}
-            className="aspect-[16/9] w-full rounded-t-3xl object-cover"
+            className={`aspect-[16/9] w-full rounded-t-3xl ${
+              imagemContain ? 'bg-white object-contain p-10' : 'object-cover'
+            }`}
           />
         ) : (
           <PadraoBordado
