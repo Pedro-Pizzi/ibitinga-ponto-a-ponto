@@ -31,6 +31,7 @@ function CartaoSemImagem({ loja }) {
 function CardLoja({ loja, onAbrir }) {
   const estilo = corTipo[loja.tipo] || corTipo.loja
   const hrefAlternativo = loja.contatoUrl || loja.site || loja.catalogoUrl || loja.instagram || loja.fonteUrl
+  const imagemContain = loja.imagemModo === 'contain'
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
@@ -39,7 +40,9 @@ function CardLoja({ loja, onAbrir }) {
           <img
             src={loja.imagem}
             alt={`Referência visual de ${loja.nome}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+              imagemContain ? 'bg-white object-contain p-8' : 'object-cover'
+            }`}
             loading="lazy"
           />
         ) : (
@@ -167,7 +170,11 @@ function ModalLoja({ loja, onFechar }) {
 
         <div className="relative h-56 overflow-hidden bg-gray-100 sm:h-72">
           {loja.imagem ? (
-            <img src={loja.imagem} alt="" className="h-full w-full object-cover" />
+            <img
+              src={loja.imagem}
+              alt=""
+              className={`h-full w-full ${loja.imagemModo === 'contain' ? 'bg-white object-contain p-12' : 'object-cover'}`}
+            />
           ) : (
             <CartaoSemImagem loja={loja} />
           )}

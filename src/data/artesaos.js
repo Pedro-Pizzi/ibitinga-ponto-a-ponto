@@ -31,21 +31,6 @@ export const produtos = [
     url: 'https://lavive.com.br/',
   },
   {
-    id: 'lavive-milazo',
-    nome: 'Coleção Milazo - conjunto completo',
-    categoria: 'cama',
-    tecnica: 'Linho, tear 100% algodão e composição de cama posta',
-    artesa: 'Lavive',
-    bairro: 'Jardim Primavera',
-    preco: 'Consulte no site oficial',
-    motivo: 'geometrico',
-    imagem: './imagens/reais/lavive-milazo.jpg',
-    destaque: false,
-    descricao:
-      'Coleção da Lavive pensada para quarto completo, combinando textura de linho, acessórios em tear e visual de decoração contemporânea.',
-    url: 'https://lavive.com.br/',
-  },
-  {
     id: 'am-jogo-cama-400-fios',
     nome: 'Jogo de cama 400 fios ponto palito',
     categoria: 'cama',

@@ -100,22 +100,4 @@ export const eventos = [
     fonteUrl: 'https://www.ibitinga.sp.gov.br/portal/noticias/0/3/3100/parceria-promove-cursos-para-artesaos-da-feira-do-artesanato-de-ibitinga',
     whatsapp: '5516996168629',
   },
-  {
-    id: 'festival-enxoval',
-    nome: 'Festival do Enxoval de Ibitinga',
-    tipo: 'feira',
-    dia: 'Centro',
-    mes: '2025+',
-    dataTxt: 'Edições divulgadas pelo turismo local',
-    local: 'Centro comercial de Ibitinga-SP',
-    descricao:
-      'Evento de compras que transforma o centro em vitrine de enxovais, bordados, cama, mesa, banho e decoração, fortalecendo o turismo de compras da cidade.',
-    imagem: './imagens/reais/juma-produto.jpg',
-    gratuito: true,
-    recorrente: true,
-    destaque: false,
-    fonte: 'Prefeitura de Ibitinga / Turismo local',
-    fonteUrl: 'https://www.ibitinga.sp.gov.br/portal/noticias/0/3/3100/parceria-promove-cursos-para-artesaos-da-feira-do-artesanato-de-ibitinga',
-    contatoUrl: 'https://www.ibitinga.sp.gov.br/',
-  },
 ]
