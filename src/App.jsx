@@ -2,6 +2,7 @@ import Cabecalho from './components/Cabecalho.jsx'
 import Hero from './components/Hero.jsx'
 import Catalogo from './components/Catalogo.jsx'
 import Lojas from './components/Lojas.jsx'
+import Artesaos from './components/Artesaos.jsx'
 import Eventos from './components/Eventos.jsx'
 import Turismo from './components/Turismo.jsx'
 import ComoFunciona from './components/ComoFunciona.jsx'
@@ -23,6 +24,7 @@ export default function App() {
         <Hero />
         <Catalogo />
         <Lojas />
+        <Artesaos />
         <Eventos />
         <Turismo />
         <ComoFunciona />
