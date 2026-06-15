@@ -24,9 +24,9 @@ export default function App() {
       <main id="conteudo">
         <Hero />
         <Stats />
+        <Artesaos />
         <Catalogo />
         <Lojas />
-        <Artesaos />
         <Eventos />
         <Turismo />
         <ComoFunciona />
