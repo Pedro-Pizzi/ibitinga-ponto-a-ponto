@@ -171,6 +171,28 @@ export const artesaos = [
     canalResumo: 'Instagram',
     destaque: false,
   },
+  {
+    id: 'diva-croche',
+    nome: 'Diva Crochê',
+    tecnica: 'croche',
+    descricao:
+      'Artesã de Ibitinga especializada em panos de copa e toalhas com barrado de crochê feito à mão. Cada peça é produzida com linha de algodão mercerizado e tecido de alta absorção, disponível em diversas cores por encomenda.',
+    especialidades: ['Pano de copa', 'Toalha de mão', 'Barrado de crochê'],
+    bairro: 'Ibitinga',
+    whatsapp: null,
+    foto: './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
+    galeria: [
+      './imagens/artesaos/diva/sg-11134201-7ratn-may1cp7fbzerfa.jpeg',
+      './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
+      './imagens/artesaos/diva/sg-11134201-7ravt-may1coc2n9lcb3.jpeg',
+    ],
+    selo: 'Artesã local',
+    fonte: 'Contato direto',
+    fonteUrl: null,
+    produtosResumo: 'Pano de copa',
+    canalResumo: 'Encomenda',
+    destaque: true,
+  },
 ]
 
 export const categorias = [
@@ -323,5 +345,53 @@ export const produtos = [
     descricao:
       'Foto real da Feirinha da Matriz com aventais bordados, peças de cozinha e costura criativa expostas em banca local.',
     whatsapp: '5516996168629',
+  },
+  {
+    id: 'diva-pano-copa-amarelo',
+    nome: 'Pano de copa com barrado de crochê amarelo',
+    categoria: 'mesa',
+    tecnica: 'Crochê artesanal em algodão mercerizado',
+    artesa: 'Diva Crochê',
+    bairro: 'Ibitinga',
+    preco: 'Consulte por encomenda',
+    motivo: 'listras',
+    imagem: './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
+    destaque: true,
+    descricao:
+      'Pano de copa em tecido branco de alta absorção com barrado de crochê amarelo feito à mão. Acabamento caprichado em linha de algodão mercerizado, com duas fileiras de ponto e franja trabalhada. Produzido por encomenda em diversas cores.',
+    whatsapp: null,
+    url: null,
+  },
+  {
+    id: 'diva-pano-copa-vermelho',
+    nome: 'Pano de copa com barrado de crochê vermelho',
+    categoria: 'mesa',
+    tecnica: 'Crochê artesanal em algodão mercerizado',
+    artesa: 'Diva Crochê',
+    bairro: 'Ibitinga',
+    preco: 'Consulte por encomenda',
+    motivo: 'listras',
+    imagem: './imagens/artesaos/diva/sg-11134201-7ratn-may1cp7fbzerfa.jpeg',
+    destaque: false,
+    descricao:
+      'Pano de copa em linho com barrado vermelho em crochê artesanal — ponto rendado em losango na barra superior e ponto concha na borda inferior. Clássico da tradição artesanal de Ibitinga, produzido à mão e disponível por encomenda.',
+    whatsapp: null,
+    url: null,
+  },
+  {
+    id: 'diva-pano-copa-verde',
+    nome: 'Pano de copa com barrado de crochê verde-teal',
+    categoria: 'mesa',
+    tecnica: 'Crochê artesanal em algodão mercerizado',
+    artesa: 'Diva Crochê',
+    bairro: 'Ibitinga',
+    preco: 'Consulte por encomenda',
+    motivo: 'listras',
+    imagem: './imagens/artesaos/diva/sg-11134201-7ravt-may1coc2n9lcb3.jpeg',
+    destaque: false,
+    descricao:
+      'Pano de copa em tecido branco com barrado verde-teal em crochê artesanal. Ponto rendado na barra superior e acabamento em ponto concha na borda, tudo feito à mão com linha de algodão de alta qualidade.',
+    whatsapp: null,
+    url: null,
   },
 ]

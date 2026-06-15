@@ -3,7 +3,7 @@ import { lojas } from '../data/lojas.js'
 import { nomeCategoria } from '../lib/estilos.js'
 
 const STATS = [
-  { n: `${artesaos.length}`, l: 'Artesãs cadastradas' },
+  { n: `${artesaos.length}`, l: 'Artesãos cadastrados' },
   { n: `${lojas.length}`, l: 'Lojas e empresas' },
   { n: `${produtos.length}`, l: 'Peças no catálogo' },
   { n: `${Object.keys(nomeCategoria).length}`, l: 'Categorias' },

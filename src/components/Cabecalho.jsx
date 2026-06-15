@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { IconeBusca, IconeFechar, IconeMenu } from './Icones.jsx'
 
 const LINKS = [
-  { href: '#artesaos', texto: 'Artesãs' },
+  { href: '#artesaos', texto: 'Artesãos' },
   { href: '#catalogo', texto: 'Catálogo' },
   { href: '#lojas', texto: 'Empresas' },
   { href: '#eventos', texto: 'Eventos' },
