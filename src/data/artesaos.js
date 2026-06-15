@@ -53,6 +53,27 @@ export const artesaos = [
     destaque: true,
   },
   {
+    id: 'diva-croche',
+    nome: 'Diva Crochê',
+    tecnica: 'croche',
+    descricao:
+      'Artesã de Ibitinga especializada em panos de copa e toalhas com barrado de crochê feito à mão. Cada peça é produzida com linha de algodão mercerizado e tecido de alta absorção, disponível em diversas cores por encomenda.',
+    especialidades: ['Pano de copa', 'Toalha de mão', 'Barrado de crochê'],
+    bairro: 'Ibitinga',
+    whatsapp: null,
+    galeria: [
+      './imagens/artesaos/diva/sg-11134201-7ratn-may1cp7fbzerfa.jpeg',
+      './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
+      './imagens/artesaos/diva/sg-11134201-7ravt-may1coc2n9lcb3.jpeg',
+    ],
+    selo: 'Artesã local',
+    fonte: 'Contato direto',
+    fonteUrl: null,
+    produtosResumo: 'Pano de copa',
+    canalResumo: 'Encomenda',
+    destaque: true,
+  },
+  {
     id: 'bordados-ibitinga',
     nome: 'Bordados de Ibitinga',
     tecnica: 'bordado',
@@ -170,28 +191,6 @@ export const artesaos = [
     produtosResumo: 'Madeira',
     canalResumo: 'Instagram',
     destaque: false,
-  },
-  {
-    id: 'diva-croche',
-    nome: 'Diva Crochê',
-    tecnica: 'croche',
-    descricao:
-      'Artesã de Ibitinga especializada em panos de copa e toalhas com barrado de crochê feito à mão. Cada peça é produzida com linha de algodão mercerizado e tecido de alta absorção, disponível em diversas cores por encomenda.',
-    especialidades: ['Pano de copa', 'Toalha de mão', 'Barrado de crochê'],
-    bairro: 'Ibitinga',
-    whatsapp: null,
-    foto: './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
-    galeria: [
-      './imagens/artesaos/diva/sg-11134201-7ratn-may1cp7fbzerfa.jpeg',
-      './imagens/artesaos/diva/sg-11134201-7rato-may1cnerymozd2.jpeg',
-      './imagens/artesaos/diva/sg-11134201-7ravt-may1coc2n9lcb3.jpeg',
-    ],
-    selo: 'Artesã local',
-    fonte: 'Contato direto',
-    fonteUrl: null,
-    produtosResumo: 'Pano de copa',
-    canalResumo: 'Encomenda',
-    destaque: true,
   },
 ]
 
