@@ -10,8 +10,7 @@ const LINKS = [
   { href: '#projeto', texto: 'O projeto' },
 ]
 
-const marcaBanner = './imagens/marca/ibitinga-ponto-a-ponto-banner.jpg'
-const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.jpg'
+const marcaSimbolo = './imagens/marca/ibitinga-ponto-a-ponto-simbolo.png'
 
 function Marca() {
   return (
